@@ -4,11 +4,28 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "Engine/DataTable.h"
 #include "ShopItem.generated.h"
 
 /**
  * 
  */
+
+USTRUCT(BlueprintType)
+struct FShopItemRow : public FTableRowBase {
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UShopItem* shopItem;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	bool bPurchased = false;
+
+};
+
+
 UCLASS()
 class BFBLABSCROSSTHEROAD_API UShopItem : public UDataAsset
 {

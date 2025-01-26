@@ -7,6 +7,7 @@
 #include "Components/Button.h"
 #include "Components/EditableTextBox.h"
 #include "Components/TextBlock.h"
+#include "CrossRoadGameInstance.h"
 #include "Kismet/GameplayStatics.h"
 
 void UCrossTheRoadScreen::NativeConstruct()
@@ -71,6 +72,9 @@ void UCrossTheRoadScreen::NativeTick(const FGeometry& MyGeometry, float InDeltaT
 		
 		bShouldLookRight = !bShouldLookRight;
 		UpdateStringForCurrentStep();
+
+		// Get Game Instance, and Increase the Score By One
+		Cast<UCrossRoadGameInstance>(GetGameInstance())->IncreaseScore(1);
 
 		if(CurrentStep == ECrossStep::CS_ReadyToCross)
 		{

@@ -18,6 +18,11 @@ void UShopItemButton::ShopItemButtonClicked()
 	GEngine->AddOnScreenDebugMessage(-1, 14.0f, FColor::Yellow, TEXT("Shop item Button Clicked!"));
 }
 
+void UShopItemButton::OnListItemObjectSet(UObject* ListItemObject)
+{
+	SetButtonData(Cast<UShopItem>(ListItemObject));
+}
+
 void UShopItemButton::SetButtonData(UShopItem* shopItem)
 {
 	if (shopItem == NULL) {

@@ -4,13 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "Blueprint/IUserObjectListEntry.h"
 #include "ShopItemButton.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class BFBLABSCROSSTHEROAD_API UShopItemButton : public UUserWidget
+class BFBLABSCROSSTHEROAD_API UShopItemButton : public UUserWidget, public IUserObjectListEntry
 {
 	GENERATED_BODY()
 	
@@ -29,6 +30,8 @@ public:
 
 	UFUNCTION()
 	void ShopItemButtonClicked();
+
+	void OnListItemObjectSet(UObject* ListItemObject);
 
 	UFUNCTION(BlueprintCallable)
 	void SetButtonData(UShopItem* shopItem);

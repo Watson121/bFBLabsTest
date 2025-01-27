@@ -33,4 +33,8 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void PreviousScreenRequest(){OnChangeScreenRequest.Broadcast(-1) ;}
+
+	UFUNCTION(BlueprintCallable)
+	void CustomScreenRequest(int val){OnChangeScreenRequest.Broadcast(val);}
+
 };

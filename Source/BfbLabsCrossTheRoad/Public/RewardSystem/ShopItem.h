@@ -27,7 +27,7 @@ public:
 
 
 UCLASS()
-class BFBLABSCROSSTHEROAD_API UShopItem : public UDataAsset
+class BFBLABSCROSSTHEROAD_API UShopItem : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 	

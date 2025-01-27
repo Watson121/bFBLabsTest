@@ -26,6 +26,9 @@ public:
 	UButton* CrossRoad;
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	UButton* ScoreShop;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	UButton* French;
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))

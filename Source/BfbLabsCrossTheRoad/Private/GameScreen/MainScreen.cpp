@@ -26,7 +26,7 @@ void UMainScreen::OnChangeLanguage(bool bIsEnglish)
 	Cast<UTextBlock>(CrossRoad->GetChildAt(0))->SetText(
 			FText::FromString(FString(GameMode->bIsEnglish ? TEXT("CrossRoad") : TEXT("Traverser"))));
 
-	Cast<UTextBlock>(CrossRoad->GetChildAt(0))->SetText(
+	Cast<UTextBlock>(ScoreShop->GetChildAt(0))->SetText(
 		FText::FromString(FString(GameMode->bIsEnglish ? TEXT("Score Shop") : TEXT("Boutique de partitions"))));
 
 	Cast<UTextBlock>(French->GetChildAt(0))->SetText(

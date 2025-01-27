@@ -2,4 +2,13 @@
 
 
 #include "RewardSystem/ShopItemGrid.h"
+#include "RewardSystem/ShopScreen.h"
 
+void UShopItemGrid::SetShopScreen(UShopScreen* _shopScreen)
+{
+	if (_shopScreen == NULL) {
+		return;
+	}
+
+	ShopScreen = _shopScreen;
+}

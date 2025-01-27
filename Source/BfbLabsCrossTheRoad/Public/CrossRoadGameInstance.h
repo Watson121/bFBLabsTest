@@ -9,6 +9,8 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnIncreaseScore);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDecraseScore);
 
+class UShopItem;
+
 /**
  * 
  */
@@ -38,6 +40,9 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category = "Score")
 	FOnDecraseScore OnDecreaseScore;
+
+	UPROPERTY(BlueprintReadWrite)
+	TArray<UShopItem*> purchasedItems;
 
 #pragma endregion
 

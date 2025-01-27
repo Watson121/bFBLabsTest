@@ -7,6 +7,12 @@
 #include "Blueprint/IUserObjectListEntry.h"
 #include "ShopItemButton.generated.h"
 
+class UButton;
+class UImage;
+class UShopItem;
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnShopItemSelected, UShopItem*, shopItem);
+
 /**
  * 
  */
@@ -18,13 +24,16 @@ class BFBLABSCROSSTHEROAD_API UShopItemButton : public UUserWidget, public IUser
 public:
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
-	class UButton* itemButton;
+	UButton* itemButton;
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
-	class UImage* itemImage;
+	UImage* itemImage;
 
 	UPROPERTY(BlueprintReadWrite)
-	class UShopItem* shopItemData;
+	UShopItem* shopItemData;
+
+	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	FOnShopItemSelected OnShopItemSelected;
 
 	void NativeConstruct();
 

@@ -16,6 +16,7 @@ void UShopItemButton::NativeConstruct()
 void UShopItemButton::ShopItemButtonClicked()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 14.0f, FColor::Yellow, TEXT("Shop item Button Clicked!"));
+	OnShopItemSelected.Broadcast(shopItemData);
 }
 
 void UShopItemButton::OnListItemObjectSet(UObject* ListItemObject)

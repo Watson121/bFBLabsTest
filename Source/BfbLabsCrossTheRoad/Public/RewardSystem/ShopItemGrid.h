@@ -6,6 +6,10 @@
 #include "Blueprint/UserWidget.h"
 #include "ShopItemGrid.generated.h"
 
+
+class UTileView;
+class UShopScreen;
+
 /**
  * 
  */
@@ -14,9 +18,17 @@ class BFBLABSCROSSTHEROAD_API UShopItemGrid : public UUserWidget
 {
 	GENERATED_BODY()
 	
-protected: 
+public: 
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
-	class UTileView* ShopItemTileView;
+	UTileView* ShopItemTileView;
+
+	UFUNCTION(BlueprintCallable)
+	void SetShopScreen(UShopScreen* _shopScreen);
+
+protected:
+
+	UPROPERTY(BlueprintReadOnly)
+	UShopScreen* ShopScreen;
 
 };
